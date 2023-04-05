@@ -1,0 +1,24 @@
+#simple way but time taken for excuation
+def checkMagazine(magazine, note):
+    res=[]
+    for i in note:
+        if i in magazine:
+            res.append("yes")
+            magazine.remove(i)
+        else:
+            res.append("No")
+    if 'No' in res:
+        print("No")
+    else:
+        print("Yes")
+        
+ 
+ #second way
+from collections import Counter
+def checkMagazine(magazine, note):
+    c1=Counter(note)
+    c2=Counter(magazine)
+    if c1-c2=={}:
+        print("Yes")
+    else:
+        print("No")
